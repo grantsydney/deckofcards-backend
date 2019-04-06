@@ -3,24 +3,12 @@ Rails.application.routes.draw do
   namespace :api do
       namespace :v1 do
         resources :decks
-        # post 'decks/new', :to => 'decks#new'
+        get '/deck/:id', to: "decks#current_deck_cards"
+        get '/deck/:id/draw', to: "decks#draw_five"
         post '/new_deck_cards', to: "decks#new"
+        get '/draw', to: "decks#draw_five"
         resources :cards
         resources :deck_cards
-
-
-
       end
     end
 end
-
-
-
-#
-#
-# resources :decks do
-#   get 'new_deck', to: 'decks#new_deck', as: :new_deck
-#   resources :cards do
-#   get 'new_card', to: 'cards#new_card', as: :new_card
-#   end
-# end

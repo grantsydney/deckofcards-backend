@@ -15,7 +15,6 @@ class Api::V1::DeckCardsController < ApplicationController
   end
 
 
-
   private
     def deckcard_params
       params.require(:deck_card).permit(:deck_id, :card_id, :drawn)

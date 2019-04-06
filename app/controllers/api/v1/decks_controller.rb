@@ -20,11 +20,24 @@ class Api::V1::DecksController < ApplicationController
     end
   end
 
-
   def new
     target_id = params[:id].to_i
     @deck = Deck.find_by(id: target_id)
     @deck.new_deck
+  end
+
+
+  def current_deck_cards
+    @current_deck_cards = Deck.where(id:params[:id])
+    render json: @current_deck_cards, status: :ok
+  end
+
+  # get deck instance and call drawn fn to return 5 draw cards
+  # render those 5 cards
+  def draw_five
+    @deck = Deck.find(params[:id])
+    @drawn_deck_cards = @deck.draw
+    render json: @drawn_deck_cards
   end
 
 

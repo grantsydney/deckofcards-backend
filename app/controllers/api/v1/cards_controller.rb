@@ -1,11 +1,16 @@
 class Api::V1::CardsController < ApplicationController
 
+  # before_action :find_card, only: [:index, :show]
 
   def index
     @cards = Card.all
     render json: @cards
   end
 
+  def show
+    @card = Card.find_by(id: params[:id])
+    render json: @card
+  end
 
   def create
     @card = Card.create(card_params)

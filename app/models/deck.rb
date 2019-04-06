@@ -10,6 +10,19 @@ class Deck < ApplicationRecord
     end
   end
 
+  def remaining_cards
+    self.deck_cards.where(drawn: false).map do |dc|
+      dc
+    end
+  end
+
+  def draw(num = 5)
+    drawn = self.remaining_cards.sample(num)
+    drawn.each do |card_drawn|
+      card_drawn.update(drawn: true)
+    end
+    return drawn
+  end
 
 
 end
