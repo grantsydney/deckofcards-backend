@@ -5,7 +5,7 @@ Rails.application.routes.draw do
         resources :decks
         get '/deck/:id', to: "decks#current_deck_cards"
         get '/deck/:id/draw', to: "decks#draw_five"
-        post '/new', to: "decks#new"
+        post '/new', to: "decks#create"
         get '/draw', to: "decks#draw_five"
         resources :cards
         resources :deck_cards

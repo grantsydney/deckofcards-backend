@@ -13,6 +13,7 @@ class Api::V1::DecksController < ApplicationController
 
   def create
     @deck = Deck.create(deck_params)
+    @deck.new_deck
     if @deck.valid?
       render json: @deck, status: :created
     else
