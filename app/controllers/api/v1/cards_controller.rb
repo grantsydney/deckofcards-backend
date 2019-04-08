@@ -21,10 +21,6 @@ class Api::V1::CardsController < ApplicationController
     end
   end
 
-  def new
-    @card = Card.new
-  end
-
   private
 
   def card_params

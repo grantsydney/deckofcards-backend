@@ -21,12 +21,6 @@ class Api::V1::DecksController < ApplicationController
     end
   end
 
-  def new
-    target_id = params[:id].to_i
-    @deck = Deck.find_by(id: target_id)
-    @deck.new_deck
-  end
-
 
   def current_deck_cards
     @current_deck_cards = Deck.where(id:params[:id])
@@ -40,12 +34,6 @@ class Api::V1::DecksController < ApplicationController
     @drawn_deck_cards = @deck.draw
     render json: @drawn_deck_cards
   end
-
-  def destroy
-  @deck.destroy
-  render json: {message: "deck deleted"}, status: :ok
-end
-
 
   private
 
