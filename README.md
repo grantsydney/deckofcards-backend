@@ -8,8 +8,10 @@ These instructions will get you a copy of the project up and running on your loc
 ## Install
 
 Clone the repository
-git clone https://github.com/sg3957/deckofcards-backend.git
-cd deckofcards-backend
+
+$ git clone https://github.com/sg3957/deckofcards-backend.git
+
+$ cd deckofcards-backend
 
 ## Install dependencies
 
