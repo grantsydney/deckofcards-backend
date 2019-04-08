@@ -35,6 +35,13 @@ class Api::V1::DecksController < ApplicationController
     render json: @drawn_deck_cards
   end
 
+  ## fn for obtaining remaining num of cards in deck not drawn
+  def remaining
+    @deck = Deck.find(params[:id])
+    @remaining_cards = @deck.remaining_cards
+    render json: @remaining_cards
+  end
+
   private
 
   def deck_params
