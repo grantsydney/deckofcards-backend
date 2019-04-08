@@ -41,6 +41,11 @@ class Api::V1::DecksController < ApplicationController
     render json: @drawn_deck_cards
   end
 
+  def destroy
+  @deck.destroy
+  render json: {message: "deck deleted"}, status: :ok
+end
+
 
   private
 
