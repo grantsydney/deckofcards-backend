@@ -21,7 +21,7 @@ bundle install
 rails db:create db:migrate db:seed
 
 ## Serve
-rails s
+rails s -p 3001
 
 
 ## Frontend
