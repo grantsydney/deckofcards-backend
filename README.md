@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Deck of Cards Backend
 
-Things you may want to cover:
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development purposes.
 
-* Ruby version
+## Install
 
-* System dependencies
+Clone the repository
+git clone https://github.com/sg3957/deckofcards-backend.git
+cd deckofcards-backend
 
-* Configuration
+## Install dependencies
 
-* Database creation
+bundle install
 
-* Database initialization
+## Initialize the database
+rails db:create db:migrate db:seed
 
-* How to run the test suite
+## Serve
+rails s
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+## Frontend
+https://github.com/sg3957/deckofcards-client
